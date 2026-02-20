@@ -8,6 +8,8 @@ vim.g.maplocalleader = " "
 
 map("n", "<ESC>", ":nohl<CR>", { desc = "clear search highlight", silent = true})
 
+map("n", "<leader>rn", "<cmd>set rnu!<CR>", { desc = "toggle relative number" })
+
 map("n", "<leader>/", "gcc", { desc = "toggle comment", remap = true })
 map("n", "<leader>/", "gc", { desc = "toggle comment", remap = true })
 
@@ -39,7 +41,7 @@ map("n", "<leader>x", "<cmd>tabclose<CR>", { desc = "close tab" })
 map("n", "<tab>", "<cmd>tabn<CR>", { desc = "next tab" })
 map("n", "<S-tab>", "<cmd>tabp<CR>", { desc = "prev tab" })
 
-map("n", "<leader>f", vim.lsp.buf.format) -- someday I'll change this on format on save
+-- map("n", "<leader>f", vim.lsp.buf.format) -- someday I'll change this on format on save
 
 map("i", "<C-b>", "<ESC>^i", { desc = "move beginning of line" })
 map("i", "<C-e>", "<End>", { desc = "move end of line" })
@@ -47,3 +49,9 @@ map("i", "<C-h>", "<Left>", { desc = "move move left" })
 map("i", "<C-l>", "<Right>", { desc = "move right" })
 map("i", "<C-j>", "<Down>", { desc = "move down"})
 map("i", "<C-k>", "<Up>", { desc = "move up" })
+
+-- Disable keyboard arrows
+map({ "n", "i", "v", "x" }, "<Up>", "<Nop>", opts)
+map({ "n", "i", "v", "x" }, "<Down>", "<Nop>", opts)
+map({ "n", "i", "v", "x" }, "<Left>", "<Nop>", opts)
+map({ "n", "i", "v", "x" }, "<Right>", "<Nop>", opts)

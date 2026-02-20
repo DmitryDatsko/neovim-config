@@ -11,9 +11,6 @@ return {
         config = function()
             vim.g.everforest_background = "soft" -- "soft" | "medium" | "hard"
             vim.g.everforest_better_perfomance = 1
-
-            vim.cmd.colorscheme("everforest")
-            vim.o.background = "dark"
         end,
     },
 }
