@@ -12,7 +12,9 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
+local lazy = require("lazy")
+
+lazy.setup({
     spec ={
         { import = "plugins" },
     },
@@ -24,4 +26,10 @@ require("lazy").setup({
         notify = true
     },
 })
+
+vim.keymap.set("n", "<leader>Lh", function() lazy.home() end, { desc = "Lazy home" })
+vim.keymap.set("n", "<leader>Li", function() lazy.install() end, { desc = "Lazy install"})
+vim.keymap.set("n", "<leader>Ls", function() lazy.sync() end, { desc = "Lazy sync"})
+vim.keymap.set("n", "<leader>Lr", function() lazy.reload() end, { desc = "Lazy reload"})
+vim.keymap.set("n", "<leader>Lu", function() lazy.update() end, { desc = "Lazy update"})
 

@@ -1,13 +1,15 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
-        event = { "BufReadPre", "BufNewFile" },
+        --event = { "BufReadPre", "BufNewFile" },
+        lazy = false,
         enabled = true,
         build = ":TSUpdate",
         config = function()
             local treesitter = require("nvim-treesitter")
 
             treesitter.setup({
+                install_dir = vim.fn.stdpath("data") .. "/site",
                 highlight = {
                     enabled = true,
                     additional_vim_regex_highlighting = false,
@@ -29,6 +31,7 @@ return {
                     "css",
                     "markdown",
                     "bash",
+                    "json",
                 },
                 auto_install = true,
             })

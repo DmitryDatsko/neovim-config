@@ -13,9 +13,9 @@ return{
             local actions = require("telescope.actions")
             local builtin = require("telescope.builtin")
 
-            
             telescope.setup({
                 defaults = {
+
                     path_display = { "smart" },
                     prompt_prefix = " ",
                     selection_caret = " ",
@@ -33,15 +33,15 @@ return{
                             enable_live_preview = true,
                             persist = {
                                 enabled = true,
-                                path = vim.fn.stdpath("config") .. "/lua/colorscheme.lua"
+                                path = vim.fn.stdpath("config") .. "/lua/colorscheme.lua",
                             },
-                        }
-                    }
+                        },
+                    },
                 },
                 pickers = {
                     find_files = {
                         theme = "dropdown",
-                        hidden = true
+                        hidden = true,
                     },
                 },
             })
@@ -49,20 +49,19 @@ return{
             require("telescope").load_extension("fzf")
             require("telescope").load_extension("themes")
 
-            vim.keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<CR>", { desc = "Fuzzy find rescent files" })
-            vim.keymap.set("n", "<leader>fw", "<cmd>Telescope live_grep<CR>", { desc = "telescope live grep" })
-            vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "telescope find buffers" })
-            vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "telescope help page" })
-            vim.keymap.set("n", "<leader>fw", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "telescope find in current buffer" })
-            vim.keymap.set("n", "<leader>cm", "<cmd>Telescope git_commits<CR>", { desc = "telescope git commits" })
-            vim.keymap.set("n", "<leader>gt", "<cmd>Telescope git_status<CR>", { desc = "telescope git status" })
-            vim.keymap.set("n", "<leader>pt", "<cmd>Telescope terms<CR>", { desc = "telescope pick hidden term" })
+            vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
+            vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "Fuzzy find rescent files" })
+            vim.keymap.set("n", "<leader>fw", builtin.live_grep, { desc = "telescope live grep" })
+            vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "telescope find buffers" })
+            vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "telescope help page" })
+            vim.keymap.set("n", "<leader>cm", builtin.git_commits, { desc = "telescope git commits" })
+            vim.keymap.set("n", "<leader>gt", builtin.git_status, { desc = "telescope git status" })
 
             vim.keymap.set("n", "<leader>fWs", function()
                 local word = vim.fn.expand("<cWORD>")
                 builtin.grep_string({ search = word })
             end, { desc = "Find Connected Words under cursor" })
-            vim.keymap.set("n", "<leader>ths", "<cmd>Telescope themes<CR>", { noremap = true, silent = true, desc = "Theme Switcher" })
+            vim.keymap.set("n", "<leader>ths", builtin.colorscheme, { noremap = true, silent = true, desc = "Theme Switcher" })
         end,
     },
 }
