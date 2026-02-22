@@ -10,6 +10,7 @@ return {
         config = function()
             local dap = require("dap")
             local dapui = require("dapui")
+
             local mason_path = vim.fn.stdpath("data") .. "/mason/packages/netcoredbg/netcoredbg"
             local netcoredbg_adapter = {
                 type = "executable",
