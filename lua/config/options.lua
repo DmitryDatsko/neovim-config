@@ -1,3 +1,11 @@
+vim.o.cmdheight = 0
+vim.diagnostic.config({
+    signs = {
+        text = {
+            [vim.diagnostic.severity.HINT] = "󰌵 ",
+        },
+    },
+})
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.tabstop = 4
@@ -10,7 +18,7 @@ vim.opt.ignorecase = true
 vim.opt.smartindent = true
 vim.opt.expandtab = true
 vim.opt.wrap = false
-vim.opt.cursorline = false 
+vim.opt.cursorline = false
 vim.opt.cursorcolumn = false
 vim.opt.mouse = "n"
 vim.opt.clipboard = "unnamedplus"

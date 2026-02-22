@@ -1,7 +1,7 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
-        --event = { "BufReadPre", "BufNewFile" },
+        event = { "BufReadPre", "BufNewFile" },
         lazy = false,
         enabled = true,
         build = ":TSUpdate",
@@ -34,13 +34,6 @@ return {
                     "json",
                 },
                 auto_install = true,
-            })
-
-            vim.api.nvim_create_autocmd('FileType', {
-                pattern = '*',
-                callback = function()
-                    pcall(vim.treesitter.start)
-                end,
             })
         end,
     },

@@ -1,17 +1,16 @@
 -- local function format_and_save()
-   -- pcall(vim.lsp.buf.forma
+-- pcall(vim.lsp.buf.forma
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-map("n", "<ESC>", ":nohl<CR>", { desc = "clear search highlight", silent = true})
+map("n", "<ESC>", ":nohl<CR>", { desc = "clear search highlight", silent = true })
 
 map("n", "<leader>rn", "<cmd>set rnu!<CR>", { desc = "toggle relative number" })
 
 map("n", "<leader>/", "gcc", { desc = "toggle comment", remap = true })
-map("n", "<leader>/", "gc", { desc = "toggle comment", remap = true })
 
 map("v", "J", ":m '>+1<CR>gv=gv", { desc = "moves lines down in visual selection" })
 map("v", "K", ":m '<-2<CR>gv=gv", { desc = "moves lines up in visual selection" })
@@ -47,7 +46,7 @@ map("i", "<C-b>", "<ESC>^i", { desc = "move beginning of line" })
 map("i", "<C-e>", "<End>", { desc = "move end of line" })
 map("i", "<C-h>", "<Left>", { desc = "move move left" })
 map("i", "<C-l>", "<Right>", { desc = "move right" })
-map("i", "<C-j>", "<Down>", { desc = "move down"})
+map("i", "<C-j>", "<Down>", { desc = "move down" })
 map("i", "<C-k>", "<Up>", { desc = "move up" })
 
 -- Disable keyboard arrows

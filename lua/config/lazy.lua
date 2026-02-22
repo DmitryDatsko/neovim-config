@@ -15,21 +15,20 @@ vim.opt.rtp:prepend(lazypath)
 local lazy = require("lazy")
 
 lazy.setup({
-    spec ={
+    spec = {
         { import = "plugins" },
     },
     checker = {
         enabled = true,
-        notify = true 
+        notify = true,
     },
     change_detection = {
-        notify = true
+        notify = true,
     },
 })
 
 vim.keymap.set("n", "<leader>Lh", function() lazy.home() end, { desc = "Lazy home" })
-vim.keymap.set("n", "<leader>Li", function() lazy.install() end, { desc = "Lazy install"})
-vim.keymap.set("n", "<leader>Ls", function() lazy.sync() end, { desc = "Lazy sync"})
-vim.keymap.set("n", "<leader>Lr", function() lazy.reload() end, { desc = "Lazy reload"})
-vim.keymap.set("n", "<leader>Lu", function() lazy.update() end, { desc = "Lazy update"})
-
+vim.keymap.set("n", "<leader>Li", function() lazy.install() end, { desc = "Lazy install" })
+vim.keymap.set("n", "<leader>Ls", function() lazy.sync() end, { desc = "Lazy sync" })
+vim.keymap.set("n", "<leader>Lr", function() lazy.reload() end, { desc = "Lazy reload" })
+vim.keymap.set("n", "<leader>Lu", function() lazy.update() end, { desc = "Lazy update" })

@@ -4,5 +4,6 @@ return {
         config = function()
             require("roslyn").setup({})
         end,
+        vim.lsp.config("roslyn", {})
     },
 }
