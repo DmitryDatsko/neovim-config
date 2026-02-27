@@ -15,6 +15,8 @@ return {
 
             telescope.setup({
                 defaults = {
+                    selection_caret = " ",
+                    entry_prefix = "",
                     layout_strategy = "horizontal",
                     layout_config = {
                         horizontal = {
@@ -28,7 +30,6 @@ return {
                     borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
                     path_display = { "smart" },
                     prompt_prefix = "Search 🔍  ",
-                    selection_caret = " ",
                     file_ignore_patterns = { "node_modules", ".git/" },
                 },
                 extensions = {
@@ -78,8 +79,6 @@ return {
             vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "telescope help page" })
             vim.keymap.set("n", "<leader>cm", builtin.git_commits, { desc = "telescope git commits" })
             vim.keymap.set("n", "<leader>gT", builtin.git_status, { desc = "telescope git status" })
-
-            vim.keymap.set("n", "/", builtin.current_buffer_fuzzy_find, { desc = "find in file" })
 
             vim.keymap.set("n", "gd", builtin.lsp_definitions, { desc = "Go to Definition" })
             vim.keymap.set("n", "gr", builtin.lsp_references, { desc = "Go to References" })

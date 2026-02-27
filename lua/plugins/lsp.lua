@@ -26,6 +26,8 @@ return {
                         "roslyn",
                         "csharpier",
                         "netcoredbg",
+                        "marksman",
+                        "clangd",
                     },
                 },
             },

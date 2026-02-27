@@ -2,7 +2,10 @@ vim.o.cmdheight = 0
 vim.diagnostic.config({
     signs = {
         text = {
-            [vim.diagnostic.severity.HINT] = "󰌵 ",
+            [vim.diagnostic.severity.WARN] = "󰊠 ",
+            [vim.diagnostic.severity.ERROR] = "󰊠 ",
+            [vim.diagnostic.severity.INFO] = "󰊠 ",
+            [vim.diagnostic.severity.HINT] = "󰊠 ",
         },
     },
 })
@@ -47,3 +50,5 @@ vim.opt.isfname:append("@-@")
 
 vim.g.netrw_banner = 0
 vim.g.editorconfig = true
+vim.g.dotnet_errors_only = false
+vim.g.dotnet_show_project_file = false
