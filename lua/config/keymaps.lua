@@ -55,6 +55,6 @@ map({ "n", "i", "v", "x" }, "<Left>", "<Nop>", opts)
 map({ "n", "i", "v", "x" }, "<Right>", "<Nop>", opts)
 
 map("n", "<leader>cd", function()
-    vim.cmd("w")
+    vim.cmd("wa")
     vim.cmd("make")
 end, { desc = "dotnet build in quickfix" })
