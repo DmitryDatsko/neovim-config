@@ -19,12 +19,29 @@ Not bundled with the config — need to be present on the system for everything 
 | ripgrep (`rg`) | `telescope` live grep |
 | fd | fast file search in `telescope` |
 | make + C compiler (gcc/clang) | building `telescope-fzf-native`, treesitter parsers |
+| tree-sitter-cli (≥ 0.25) | required by `nvim-treesitter` (main branch) to compile parsers — `:checkhealth nvim-treesitter` fails without it |
 | unzip, curl, wget | required by `mason.nvim` to download LSP/DAP servers |
 | .NET SDK | building/running C# projects, required by `roslyn.nvim`, `csharpier`, `netcoredbg` |
 
 Rust toolchain (`rustc`/`cargo`) is **not** required — `blink.cmp`'s fuzzy matcher and `rust_analyzer` both use prebuilt binaries fetched by their installers, not a local Rust build.
 
 Bootstrap command (`lua/config/lazy.lua`) clones `lazy.nvim` itself on first launch; no manual step needed there.
+
+### macOS (Homebrew)
+
+```bash
+brew install neovim git ripgrep fd make gcc unzip wget tree-sitter
+brew install --cask font-jetbrains-mono-nerd-font
+brew install --cask dotnet-sdk
+```
+
+On Apple Silicon, make sure `/opt/homebrew/bin` is actually on `$PATH` (`fish_add_path /opt/homebrew/bin` in `config.fish` if using fish) — `tree-sitter-cli` being installed but not on `$PATH` is a common cause of `:checkhealth nvim-treesitter` reporting it as missing.
+
+### Arch Linux (pacman)
+
+```bash
+sudo pacman -S neovim git ripgrep fd make gcc unzip curl wget ttf-jetbrains-mono-nerd dotnet-sdk tree-sitter-cli
+```
 
 ## Layout
 
