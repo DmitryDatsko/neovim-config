@@ -30,7 +30,7 @@ Bootstrap command (`lua/config/lazy.lua`) clones `lazy.nvim` itself on first lau
 ### macOS (Homebrew)
 
 ```bash
-brew install neovim git ripgrep fd make gcc unzip wget tree-sitter
+brew install neovim git ripgrep fd make gcc unzip wget tree-sitter tree-sitter-cli
 brew install --cask font-jetbrains-mono-nerd-font
 brew install --cask dotnet-sdk
 ```
@@ -74,7 +74,6 @@ sudo pacman -S neovim git ripgrep fd make gcc unzip curl wget ttf-jetbrains-mono
 | [sainnhe/everforest](https://github.com/sainnhe/everforest) | colorscheme |
 | [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) | statusline |
 | [b0o/incline.nvim](https://github.com/b0o/incline.nvim) | floating winbar with filename and diagnostics |
-| [Bekaboo/dropbar.nvim](https://github.com/Bekaboo/dropbar.nvim) | breadcrumbs / symbol navigation (`enabled = false` in this config) |
 | [echasnovski/mini.icons](https://github.com/echasnovski/mini.icons) | file/filetype icons, mocked as `nvim-web-devicons` |
 | [folke/noice.nvim](https://github.com/folke/noice.nvim) | UI overhaul for cmdline, messages, search |
 | [rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify) | notification popups (noice dependency) |

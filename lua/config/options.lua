@@ -50,5 +50,7 @@ vim.opt.isfname:append("@-@")
 
 vim.g.netrw_banner = 0
 vim.g.editorconfig = true
-vim.g.dotnet_errors_only = false
+vim.g.dotnet_errors_only = true
 vim.g.dotnet_show_project_file = false
+
+vim.lsp.semantic_tokens.enable()

@@ -51,18 +51,6 @@ return {
                         require("telescope.themes").get_dropdown {
                         },
                     },
-                    aerial = {
-                        col1_width = 4,
-                        col2_width = 30,
-                        format_symbol = function(symbol_path, filetype)
-                            if filetype == "json" or filetype == "yaml" then
-                                return table.concat(symbol_path, ".")
-                            else
-                                return symbol_path[#symbol_path]
-                            end
-                        end,
-                        show_columns = "both",
-                    },
                 },
                 pickers = {
                     find_files = {
@@ -83,7 +71,6 @@ return {
             telescope.load_extension("fzf")
             telescope.load_extension("themes")
             telescope.load_extension("ui-select")
-            telescope.load_extension("aerial")
 
             vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
             vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "Fuzzy find rescent files" })
@@ -112,7 +99,6 @@ return {
                 { noremap = true, silent = true, desc = "Theme Switcher" })
 
             vim.keymap.set("n", "<leader>fN", "<cmd>Telescope notify<CR>", { desc = "notifies list" })
-            vim.keymap.set("n", "<leader>fs", "<cmd>Telescope aerial<CR>", { desc = "Find symbols (aerial)" })
         end,
     },
 }

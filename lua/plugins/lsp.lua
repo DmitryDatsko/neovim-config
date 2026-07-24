@@ -24,10 +24,13 @@ return {
                 opts = {
                     ensure_installed = {
                         "roslyn",
+                        "vtsls",
+                        "nomicfoundation-solidity-language-server",
                         "csharpier",
                         "netcoredbg",
                         "marksman",
                         "clangd",
+                        "prettier",
                     },
                 },
             },

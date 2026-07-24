@@ -8,7 +8,7 @@ vim.g.maplocalleader = " "
 
 map("n", "<ESC>", ":nohl<CR>", { desc = "clear search highlight", silent = true })
 
-map("n", "<leader>rn", "<cmd>set rnu!<CR>", { desc = "toggle relative number" })
+map("n", "<leader>tn", "<cmd>set rnu!<CR>", { desc = "toggle relative number" })
 
 map({ "n", "v" }, "<leader>/", "gcc", { desc = "toggle comment", remap = true })
 

@@ -13,6 +13,7 @@ return {
 
             local ensure_installed = {
                 "c_sharp",
+                "solidity",
                 "razor",
                 "lua",
                 "hyprlang",
@@ -26,6 +27,8 @@ return {
                 "markdown",
                 "bash",
                 "json",
+                "tsx",
+                "typescript"
             }
 
             local installed = treesitter.get_installed and treesitter.get_installed() or {}
